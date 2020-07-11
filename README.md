@@ -1,5 +1,7 @@
 # rust-fnv
 
+![rsgx](https://github.com/sammyne/rust-fnv/workflows/rsgx/badge.svg?branch=rsgx1.1.2)
+
 An implementation of the [Fowler–Noll–Vo hash function][chongo].
 
 ### [Read the documentation](https://doc.servo.org/fnv/)

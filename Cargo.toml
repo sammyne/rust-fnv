@@ -7,6 +7,7 @@ license = "Apache-2.0 / MIT"
 readme = "README.md"
 repository = "https://github.com/servo/rust-fnv"
 documentation = "https://doc.servo.org/fnv/"
+edition = "2018"
 
 [lib]
 name = "fnv"
@@ -14,4 +15,19 @@ path = "lib.rs"
 
 [features]
 default = ["std"]
-std = []
+std = ["sgx_tstd"]
+with-testing = ["inventory", "sgx_tstd", "testing"]
+
+[dependencies.inventory]
+optional    = true
+version     = "0.1.6"
+
+[dependencies.sgx_tstd]
+git         = "https://github.com/apache/teaclave-sgx-sdk"
+optional    = true
+rev         = "v1.1.2"
+
+[dependencies.testing]
+branch      = "rsgx1.1.2"
+git         = "https://github.com/usccommunity/teaclave-testing"
+optional    = true
